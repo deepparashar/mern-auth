@@ -10,9 +10,12 @@ const app = express();
 const port =  process.env.PORT || 4000
 connectDB()
 
-const allowedOrigins = ['http://localhost:5173']
+const allowedOrigins = ['https://mern-auth-frontend-orcin.vercel.app']; // your frontend url
 
-app.use(cors({origin:allowedOrigins, credentials:true}));
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true
+}));
 app.use(cookieParser())
 app.use(express.json());
 
